@@ -1,3 +1,3 @@
 # advent of code 2025
 
-`make run`
+Use `make run` to run the puzzles
