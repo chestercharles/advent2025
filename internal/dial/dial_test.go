@@ -1,4 +1,4 @@
-package dial1
+package dial
 
 import "testing"
 
@@ -89,5 +89,76 @@ func TestDialTurnLeft51(t *testing.T) {
     want := 99
     if got != want {
         t.Fatalf("TestDialTurnLeft51; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnLeftZeroes1(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnLeft(1)
+    want := 0
+    if got != want {
+        t.Fatalf("TestDialTurnLeftZeroes1; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnLeftZeroes50(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnLeft(50)
+    want := 1
+    if got != want {
+        t.Fatalf("TestDialTurnLeftZeroes50; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnLeftZeroes51(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnLeft(51)
+    want := 1
+    if got != want {
+        t.Fatalf("TestDialTurnLeftZeroes51; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnLeftZeroes150(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnLeft(150)
+    want := 2
+    if got != want {
+        t.Fatalf("TestDialTurnLeftZeroes100; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnRightZeroes1(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnRight(1)
+    want := 0
+    if got != want {
+        t.Fatalf("TestDialTurnRightZeroes1; got %d; want %d", got, want)
+    }
+}
+
+
+func TestDialTurnRightZeroes50(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnRight(50)
+    want := 1
+    if got != want {
+        t.Fatalf("TestDialTurnRightZeroes50; got %d; want %d", got, want)
+    }
+}
+
+
+
+func TestDialTurnRightZeroes150(t *testing.T) {
+	myDial := NewDial()
+    got := myDial.TurnRight(150)
+    want := 2
+    if got != want {
+        t.Fatalf("TestDialTurnRightZeroes150; got %d; want %d", got, want)
     }
 }

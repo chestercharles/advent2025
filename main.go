@@ -25,23 +25,24 @@ func main() {
    registerSolutions(reg)
 
    if (day == 0 || part == 0 ) {
-	log.Fatal("Must specify day or part")
+	   log.Fatal("Must specify day or part")
    }
 
    in, err := input.Read(day)
 
    if (err != nil) {
-	log.Fatal(err)
+	   log.Fatal(err)
    }
 
    err2 := reg.Run(day, part, in)
 
    if (err2 != nil) {
-	log.Fatal(err2)
+	   log.Fatal(err2)
    }
 
 }
 
 func registerSolutions(r runner.Registry)  {
 	 r.Add(1, 1, day1.Part1)
+	 r.Add(1, 2, day1.Part2)
 }

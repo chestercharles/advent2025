@@ -1,4 +1,4 @@
-package dial1
+package dial
 
 
 type Node struct {
@@ -52,16 +52,32 @@ func NewDial() *Dial {
     return newDial
 }
 
-func (d *Dial) TurnRight(value int) {
+func (d *Dial) TurnRight(value int) (int) {
+	zeroes := 0
+
 	for i := 0; i < value; i++ {
 		d.pos = d.pos.Next
+
+		if (d.pos.Value == 0) {
+			zeroes = zeroes + 1
+		}
 	}
+
+	return zeroes
 }
 
-func (d *Dial) TurnLeft(value int) {
+func (d *Dial) TurnLeft(value int) (int) {
+	zeroes := 0
+
 	for i := 0; i< value; i++ {
 		d.pos = d.pos.Prev
+
+		if (d.pos.Value == 0) {
+			zeroes = zeroes + 1
+		}
 	}
+
+	return zeroes
 }
 
 func (d *Dial) Read() int {

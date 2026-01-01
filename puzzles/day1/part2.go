@@ -10,7 +10,7 @@ import (
 
 
 
-func Part1(input string) (string, error) {
+func Part2(input string) (string, error) {
 	lines := strings.Split(input, "\n")
 
 	myDial := dial.NewDial()
@@ -24,15 +24,11 @@ func Part1(input string) (string, error) {
 		}
 
 		if (dir == "L") {
-			myDial.TurnLeft(n)
+			zeroes = zeroes + myDial.TurnLeft(n)
 		}
 
 		if (dir == "R") {
-			myDial.TurnRight(n)
-		}
-
-		if (myDial.Read() == 0) {
-			zeroes++
+			zeroes = zeroes + myDial.TurnRight(n)
 		}
 	}
 	
