@@ -8,7 +8,7 @@ import (
 func Read(day int) (string, error) {
 	path := fmt.Sprintf("inputs/day%d.txt", day)
 	b, err := os.ReadFile(path)
-	if (err != nil) {
+	if err != nil {
 		return "", err
 	}
 

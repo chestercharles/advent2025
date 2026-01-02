@@ -7,9 +7,6 @@ import (
 	"github.com/chestercharles/advent2025/internal/dial"
 )
 
-
-
-
 func Part2(input string) (string, error) {
 	lines := strings.Split(input, "\n")
 
@@ -19,18 +16,18 @@ func Part2(input string) (string, error) {
 	for _, element := range lines {
 		dir, n, err := parseCode(element)
 
-		if (err != nil) {
+		if err != nil {
 			panic(err)
 		}
 
-		if (dir == "L") {
+		if dir == "L" {
 			zeroes = zeroes + myDial.TurnLeft(n)
 		}
 
-		if (dir == "R") {
+		if dir == "R" {
 			zeroes = zeroes + myDial.TurnRight(n)
 		}
 	}
-	
+
 	return strconv.Itoa(zeroes), nil
 }

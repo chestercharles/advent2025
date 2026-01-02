@@ -15,15 +15,15 @@ func (r Registry) Add(day, part int, fn SolutionFn) {
 	r[Key{Day: day, Part: part}] = fn
 }
 
-func (r Registry) Run(day, part int, input string) (error) {
+func (r Registry) Run(day, part int, input string) error {
 	fn, ok := r[Key{Day: day, Part: part}]
-	if (!ok) {
+	if !ok {
 		return fmt.Errorf("no solution registered for day %d part %d", day, part)
-	} 
+	}
 
 	sol, err := fn(input)
 
-	if (err != nil) {
+	if err != nil {
 		return err
 	}
 

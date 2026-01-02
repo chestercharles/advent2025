@@ -1,6 +1,5 @@
 package dial
 
-
 type Node struct {
 	Value int
 	Prev  *Node
@@ -13,9 +12,9 @@ type DoublyLinkedList struct {
 	Len  int
 }
 
-func (ddl DoublyLinkedList) Append (value int) {
+func (ddl DoublyLinkedList) Append(value int) {
 	newNode := &Node{Value: value}
-	if (ddl.Len == 0 ) {
+	if ddl.Len == 0 {
 		ddl.Head = newNode
 		ddl.Tail = newNode
 		ddl.Len = 1
@@ -39,7 +38,7 @@ func NewDial() *Dial {
 		tail = tail.Next
 	}
 
-	for i := 0; i< 50; i++ {
+	for i := 0; i < 50; i++ {
 		tail.Next = &Node{Value: i, Prev: tail}
 		tail = tail.Next
 	}
@@ -49,16 +48,16 @@ func NewDial() *Dial {
 
 	newDial := &Dial{pos: head}
 
-    return newDial
+	return newDial
 }
 
-func (d *Dial) TurnRight(value int) (int) {
+func (d *Dial) TurnRight(value int) int {
 	zeroes := 0
 
 	for i := 0; i < value; i++ {
 		d.pos = d.pos.Next
 
-		if (d.pos.Value == 0) {
+		if d.pos.Value == 0 {
 			zeroes = zeroes + 1
 		}
 	}
@@ -66,13 +65,13 @@ func (d *Dial) TurnRight(value int) (int) {
 	return zeroes
 }
 
-func (d *Dial) TurnLeft(value int) (int) {
+func (d *Dial) TurnLeft(value int) int {
 	zeroes := 0
 
-	for i := 0; i< value; i++ {
+	for i := 0; i < value; i++ {
 		d.pos = d.pos.Prev
 
-		if (d.pos.Value == 0) {
+		if d.pos.Value == 0 {
 			zeroes = zeroes + 1
 		}
 	}
