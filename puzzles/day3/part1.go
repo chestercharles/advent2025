@@ -27,6 +27,7 @@ func joltage(bank string) (int, error) {
 		return strconv.Atoi(string(arr[l-2]) + string(arr[l]))
 	}
 
+	return 0, nil
 }
 
 func makeArr(str string) ([]int, error) {
