@@ -8,6 +8,7 @@ import (
 	"github.com/chestercharles/advent2025/internal/runner"
 	"github.com/chestercharles/advent2025/puzzles/day1"
 	"github.com/chestercharles/advent2025/puzzles/day2"
+	"github.com/chestercharles/advent2025/puzzles/day3"
 )
 
 func main() {
@@ -46,4 +47,5 @@ func registerSolutions(r runner.Registry) {
 	r.Add(1, 2, day1.Part2)
 	r.Add(2, 1, day2.Part1)
 	r.Add(2, 2, day2.Part2)
+	r.Add(3, 1, day3.Part1)
 }
